@@ -75,11 +75,17 @@
                     <v-col cols="12">
                         <v-text-field label="Name*" v-model="form.name" required></v-text-field>
                     </v-col>
-                    <v-col cols="12">
-                        <v-text-field label="merk*" v-model="form.merk" required></v-text-field> 
+                    <v-col cols="12" sm="6" md="4">
+                        <v-overflow-btn
+                        class="my-2"
+                        :items="dropdown_font"
+                        label="Merk*"
+                        target="#dropdown-example"
+                        v-model="form.merk"
+                        ></v-overflow-btn>
                     </v-col>
                     <v-col cols="12">
-                        <v-text-field label="amount*" v-model="form.amount" required></v-text-field>
+                        <v-text-field label="Amount*" v-model="form.amount" required></v-text-field>
                     </v-col>
                 </v-row>
             </v-container>
@@ -115,6 +121,7 @@
 export default {
     data () {
         return {
+            dropdown_font: ['Honda', 'Yamaha','Suzuki'],
             dialog: false,
             keyword: '',
             headers: [
@@ -136,7 +143,7 @@ export default {
                     },
 
                     {
-                    text: 'Aksi',
+                    text: 'Created At',
                     value: null
                     },  
             ],
